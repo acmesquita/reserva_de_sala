@@ -1,24 +1,12 @@
-# README
+# Reserva de Sala
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sistema de gerenciamento de reservas de uma sala de reuniões
 
-Things you may want to cover:
+### Iniciar o projeto
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+  git clone https://github.com/acmesquita/reserva_de_sala.git
+  cd reserva_de_sala
+  bundle install
+  rails server
+```
