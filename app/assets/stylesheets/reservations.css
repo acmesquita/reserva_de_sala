@@ -4,11 +4,16 @@
 .main {
   border-right: 1px solid black;
 }
-.main button {
+/* .main .btn {
   position: absolute;
   bottom: 15px;
   left: 20px;
   width: 90%;
+} */
+
+.main .opcoes{
+  display: flex;
+  justify-content: space-between;
 }
 .main h2{
   text-align: center;
