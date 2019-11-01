@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  get 'reservations/index'
   devise_for :users
 
   authenticated :user do
-    root to: 'welcome#index', as: :authenticated_root
+    root to: 'reservations#index', as: :authenticated_root
   end
   root to: redirect('/users/sign_in')
 
