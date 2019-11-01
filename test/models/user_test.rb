@@ -25,6 +25,6 @@ class UserTest < ActiveSupport::TestCase
     assert user1.valid?
     assert_not user2.valid?
     assert_not_empty user2.errors
-    assert user2.errors[:email], "já está em uso"
+    assert_equal user2.errors[:email].first, "já está em uso"
   end
 end
