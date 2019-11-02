@@ -14,7 +14,7 @@ pt-BR:
 
   time:
     formats:
-      default: "%A, %d de %B de %Y, %H:%M h"
+      default: "%d/%m/%Y"
       short: "%d/%m, %H:%M h"
       long: "%A, %d de %B de %Y, %H:%M h"
     am: ''
@@ -22,6 +22,10 @@ pt-BR:
 
   # distancia do tempo em palavras
   datetime:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
     distance_in_words:
       half_a_minute: 'meio minuto'
       less_than_x_seconds:

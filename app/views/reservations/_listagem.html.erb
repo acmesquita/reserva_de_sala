@@ -1,24 +1,5 @@
 <ul class="listagem">
-  <li>
-    <%= render 'data', data: '31 out' %>
-  </li>
-  <li>
-    <%= render 'item_reserva' %>
-  </li>
-  <li>
-    <%= render 'item_reserva' %>
-  </li>
-  <li>
-    <%= render 'item_reserva' %>
-  </li>
-  <li>
-    <%= render 'data', data: '1 nov' %>
-  </li>
-  <li>
-    <%= render 'item_reserva' %>
-  </li>
-  <li>
-    <%= render 'item_reserva' %>
-  </li>
-
+  <% reservations.each do |reserve| %>
+    <%= render  "item_reserva", reserve: reserve %>
+  <% end %>
 </ul>
