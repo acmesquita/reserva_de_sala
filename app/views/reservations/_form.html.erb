@@ -22,10 +22,10 @@
     <%= f.text_area :description, class:"form-control" %>
   </div>
 
-  <% if @reserve.id.present? %>
+  <% if reserve.id.present? %>
     <div class="row">
       <%= f.submit  "Editar", class:"btn btn-warning btn-lg" %>
-      <%= link_to  "Deletar", root_url, class:"btn btn-danger btn-lg" %>
+      <%= link_to  "Deletar", reserve, class:"btn btn-danger btn-lg",  method: :delete, data: { confirm: 'Deseja deletar essa reserva?' } %>
     </div>
   <% else %>
     <%= f.submit  "Adicionar" , class:"btn btn-primary btn-block" %>

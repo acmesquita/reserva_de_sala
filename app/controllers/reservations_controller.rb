@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   
-  before_action :set_reserve, only: [:edit, :show]
+  before_action :set_reserve, only: [:edit, :show, :update, :destroy]
 
   def index
     @reservations = Reserve.where("date_start >= ?", Time.zone.now)
@@ -23,6 +23,19 @@ class ReservationsController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def update
+    if @reserve.update(reserve_params)
+      redirect_to reservations_path, notice: "Reserva atualizada com sucesso!"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @reserve.destroy
+    redirect_to reservations_url, notice: "Reserva excluída com sucesso!"    
   end
 
   private
