@@ -75,10 +75,28 @@
 .main .listagem .reserva .opcoes{
   text-transform: uppercase;
 }
-
+.calendar .row {
+  height: 80px;
+}
 .calendar h2{
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
   font-family: sans-serif;
+}
+
+.calendar .date {
+  width: 10px;
+  height: 80px;
+  border: 1px solid #333;
+  text-align: right;
+  cursor: pointer;
+}
+.calendar .date p{
+  font-size: 10px;
+  text-align: left;
+  padding: 1px;
+  background: lightblue;
+  width: 50px;
+  border-radius: 2px;
 }
