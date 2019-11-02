@@ -1,5 +1,6 @@
 class Reserve < ApplicationRecord
   belongs_to :user
 
-  validates :date_start, :date_end, :title, presence: true
+  validates_presence_of :date_start, :date_end, :title
+  
 end
