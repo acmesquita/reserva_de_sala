@@ -18,6 +18,8 @@ class ReservationsController < ApplicationController
 
   def create
     @reserve = Reserve.new(reserve_params.merge({user: current_user}))
+    @reserve.date_start = date_start
+    @reserve.date_end = date_end
     if @reserve.save
       redirect_to reservations_path, notice: "Reserva criada com sucesso!"
     else
@@ -45,6 +47,16 @@ class ReservationsController < ApplicationController
   end
 
   def reserve_params
-    params.require(:reserve).permit(:title, :description, :date_start, :date_end)
+    params.require(:reserve).permit(:title, :description)
+  end
+
+  def date_start
+    reserve = params.require(:reserve).permit(:date, :start)
+    Time.zone.parse("#{reserve[:date]} #{reserve[:start]}")
+  end
+
+  def date_end
+    reserve = params.require(:reserve).permit(:date, :end)
+    Time.zone.parse("#{reserve[:date]} #{reserve[:end]}")
   end
 end

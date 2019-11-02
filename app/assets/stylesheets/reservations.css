@@ -10,8 +10,11 @@
   margin-left: 5px;
 }
 
-.row {
-  height: 100vh;
+.paniel {
+  height: 85vh;
+  margin-top: 10px;
+}
+.main .row{
 }
 .main {
   border-right: 1px solid black;
@@ -77,6 +80,7 @@
 }
 .calendar .row {
   height: 80px;
+  margin: 0;
 }
 .calendar h2{
   text-align: center;
