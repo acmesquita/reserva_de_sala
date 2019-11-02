@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
   before_action :set_reserve, only: [:edit, :show, :update, :destroy]
 
   def index
-    @reservations = Reserve.where("date_start >= ?", Time.zone.now)
+    @reservations = Reserve.where("date_start >= ?", Time.zone.now).order(:date_start)
   end
 
   def show
