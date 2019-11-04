@@ -1,11 +1,11 @@
-<div class="row">
+<div class="paniel row">
   <div class="main col-md-4">
     <h2>Reservas</h2>
-    <%= render 'listagem' %>
-    <%= link_to  "Adicionar", reservations_new_url  , class:"btn btn-outline-primary btn-block" %>
-    <!-- <button type="button" class="btn btn-outline-primary btn-block">Adicionar</button> -->
+    <%= render 'listagem', reservations: @reservations %>
+    <%= link_to  "Adicionar", new_reserve_path , class:"btn btn-outline-primary btn-block" %>
   </div>
   <div class="calendar col-md-8">
     <h2>Calendar</h2>
+    <%= render  "full_calendar" %>
   </div>
 </div>

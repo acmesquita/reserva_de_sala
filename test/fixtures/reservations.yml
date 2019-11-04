@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date_start: 2019-10-31 21:27:15
-  date_end: 2019-10-31 21:27:15
+  date_start: 2019-10-31 22:00:00
+  date_end: 2019-10-31 23:00:00
   title: MyString
   description: MyString
   user: one
 
 two:
-  date_start: 2019-10-31 21:27:15
-  date_end: 2019-10-31 21:27:15
+  date_start: 2019-10-31 13:00:00
+  date_end: 2019-10-31 14:00:00
   title: MyString
   description: MyString
   user: two

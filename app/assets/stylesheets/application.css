@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.link-sair {
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+  
+}

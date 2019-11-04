@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'reservations/index'
-  get 'reservations/new'
-  get 'reservations/edit'
+  # get 'reservations/index'
+  # get 'reservations/new'
+  # get 'reservations/edit'
   
+  resources :reservations, only: [:index, :create, :new, :show, :destory]
   devise_for :users
 
   authenticated :user do

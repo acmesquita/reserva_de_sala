@@ -1,0 +1,10 @@
+<div class="reserva">
+  <div class="info">
+    <h4><%= link_to reserve.title, reserve_path(reserve) %></h4>
+    <p><%= reserve.user.name %></p>
+    <p><%= format_time(reserve)  %></p>
+  </div>
+  <div class="opcoes">
+    <%#= link_to  "Editar", edit_reserve_path(reserve) %>
+  </div>
+</div>
