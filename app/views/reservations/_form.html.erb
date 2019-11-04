@@ -5,17 +5,17 @@
   </div>
   <div class="form-group">
     <%= f.label :date, "Data" %>
-    <%= f.date_field :date, class:"form-control" %>
+    <%= f.date_field :date, :value => Time.zone.now.strftime('%Y-%m-%d'), class:"form-control"%>
   </div>
   <div class="form-group">
     <div class="row">
       <div class="col-md-6">
         <%= f.label :start, "Início" %>
-        <%= f.select :start, hours, {}, class: 'custom-select' %>
+        <%= f.select :start, hours_start, {}, class: 'custom-select' %>
       </div>
       <div class="col-md-6">
         <%= f.label :end, "Fim" %>
-        <%= f.select :end, hours, {}, class: 'custom-select' %>
+        <%= f.select :end, hours_end, {}, class: 'custom-select' %>
       </div>
     </div>
   </div>
