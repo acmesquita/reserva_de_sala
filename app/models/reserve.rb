@@ -4,6 +4,7 @@ class Reserve < ApplicationRecord
   validates_presence_of :date_start, :date_end, :title
  
   validate :dates_is_possible?
+  validate :dates_between_range?
 
   def dates_is_possible?
     return if [date_start.blank?, date_end.blank?].any?
@@ -11,13 +12,17 @@ class Reserve < ApplicationRecord
       errors.add(:date_end, 'Data fim menor que a início.')
     end
   end
- 
-  # validates :date_ok?
 
-  # def date_ok?
-  #   puts 'entrou aqui'
-  #   if( date_start < date_end )
-  #     errors.add(:date_end, 'Data início maior que data fim')
-  #   end
-  # end
+  def dates_between_range?
+    return if [date_start.blank?, date_end.blank?].any?
+    range = (Array (9..18)).map {|num| "#{num}:00" }
+    if !range.include? date_end.strftime("%H:%M")
+      errors.add(:date_end, 'Data fim fora do período.')
+    end
+    
+    if !range.include? date_start.strftime("%H:%M")
+      errors.add(:date_end, 'Data fim fora do período.')
+    end
+  end
+ 
 end
