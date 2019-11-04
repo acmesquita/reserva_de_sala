@@ -36,8 +36,12 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    @reserve.destroy
-    redirect_to reservations_url, notice: "Reserva excluída com sucesso!"    
+    if @reserve.user.id == current_user.id
+      @reserve.destroy
+      redirect_to reservations_url, notice: "Reserva excluída com sucesso!"    
+    else
+      render :show, { errors: "Não pertence a esse usuário"}
+    end
   end
 
   private
