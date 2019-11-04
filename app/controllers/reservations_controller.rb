@@ -36,7 +36,7 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    if @reserve.user.id == current_user.id
+    if user_permit
       @reserve.destroy
       redirect_to reservations_url, notice: "Reserva excluída com sucesso!"    
     else
@@ -62,5 +62,9 @@ class ReservationsController < ApplicationController
   def date_end
     reserve = params.require(:reserve).permit(:date, :end)
     Time.zone.parse("#{reserve[:date]} #{reserve[:end]}")
+  end
+
+  def user_permit(reserve)
+    reserve.user.id == current_user.id
   end
 end
