@@ -8,5 +8,7 @@ Sistema de gerenciamento de reservas de uma sala de reuniões
   git clone https://github.com/acmesquita/reserva_de_sala.git
   cd reserva_de_sala
   bundle install
+  yarn install
+  rails db:prepare
   rails server
 ```
