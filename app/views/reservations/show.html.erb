@@ -1,22 +1,28 @@
 <div class="paniel row">
   <div class="main col-md-4">
     <h2>Reservas</h2>
-    <div class="field">
-      <h3><small>título: </small><%= @reserve.title %></h3>
+    <div class="info">
+      <div class="field">
+        <h3><small>título: </small><%= @reserve.title %></h3>
+      </div>
+      <div class="field">
+        <h3><small>responsável: </small><%= @reserve.user.name %></h3>
+      </div>
+      <div class="field">
+        <h3><small>realização: </small><%= format_time(@reserve) %></h3>
+      </div>
+      <div class="field">
+        <h3><small>tempo de espera: </small><%= how_long(@reserve) %></h3>
+      </div>  
+      <div class="field">
+        <h3><small>descrição: </small><%= @reserve.description %></h3>
+      </div>
     </div>
-    <div class="field">
-      <h3><small>responsável: </small><%= @reserve.user.name %></h3>
+    <div class="botoes">
+      <%= link_to  "Editar", edit_reserve_path(@reserve), class:"btn btn-outline-warning btn-block" %>
+      <%= link_to  "Deletar", @reserve, class:"btn btn-outline-danger btn-block",  method: :delete, data: { confirm: 'Deseja deletar essa reserva?' } if is_this_user?(@reserve) %>
+      <%= link_to  "Voltar", reservations_path, class:"btn btn-outline-default btn-block" %>
     </div>
-    <div class="field">
-      <h3><small>realização: </small><%= format_time(@reserve) %></h3>
-    </div>
-    <div class="field">
-      <h3><small>tempo de espera: </small><%= how_long(@reserve) %></h3>
-    </div>  
-    <div class="field">
-      <h3><small>descrição: </small><%= @reserve.description %></h3>
-    </div>   
-    <%= link_to  "Voltar", reservations_path, class:"btn btn-outline-default btn-block" %>
   </div>
   <div class="calendar col-md-8">
     <h2>Calendar</h2>

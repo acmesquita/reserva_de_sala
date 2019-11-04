@@ -24,13 +24,6 @@
     <%= f.text_area :description, class:"form-control" %>
   </div>
 
-  <% if reserve.id.present? %>
-    <div class="opcoes">
-      <%= f.submit  "Editar", class:"btn btn-warning btn-lg" %>
-      <%= link_to  "Deletar", reserve, class:"btn btn-danger btn-lg",  method: :delete, data: { confirm: 'Deseja deletar essa reserva?' } if is_this_user?(reserve) %>
-    </div>
-  <% else %>
-    <%= f.submit  "Adicionar" , class:"btn btn-primary btn-block" %>
-  <% end %>
+  <%= f.submit  "Salvar" , class:"btn btn-primary btn-block" %>
     
 <% end %>
