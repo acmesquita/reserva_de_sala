@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="botoes">
-      <%= link_to  "Editar", edit_reserve_path(@reserve), class:"btn btn-outline-warning btn-block" %>
+      <%#= link_to  "Editar", edit_reserve_path(@reserve), class:"btn btn-outline-warning btn-block" %>
       <%= link_to  "Deletar", @reserve, class:"btn btn-outline-danger btn-block",  method: :delete, data: { confirm: 'Deseja deletar essa reserva?' } if is_this_user?(@reserve) %>
       <%= link_to  "Voltar", reservations_path, class:"btn btn-outline-default btn-block" %>
     </div>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'reservations/new'
   # get 'reservations/edit'
   
-  resources :reservations
+  resources :reservations, only: [:index, :create, :new, :show, :destory]
   devise_for :users
 
   authenticated :user do
