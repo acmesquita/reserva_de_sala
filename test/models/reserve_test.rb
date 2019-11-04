@@ -29,6 +29,18 @@ class ReserveTest < ActiveSupport::TestCase
     assert_equal reserve.errors[:user].first, "é obrigatório informar um usuário"
   end
 
+  test "validando se data fim é maior que data inicio" do
+    reserve = Reserve.new({date_start: DateTime.now, date_end: DateTime.now, title: "Reunião teste", user: users(:one)})
+    assert reserve.save
+  end
+
+  test "validando se data inicio é maior que data fim" do
+    reserve = Reserve.new({date_end: DateTime.now, date_start: DateTime.now, title: "Reunião teste", user: users(:one)})
+    assert_not reserve.save
+    assert_not_empty reserve.errors
+    assert_equal reserve.errors[:date_end].first, "Data fim menor que a início."
+  end
+
   test "validando reservas" do
     assert reservations(:one).valid?
     assert reservations(:two).valid?

@@ -20,10 +20,10 @@ class ReservationsController < ApplicationController
     @reserve = Reserve.new(reserve_params.merge({user: current_user}))
     @reserve.date_start = date_start
     @reserve.date_end = date_end
-    if @reserve.save
+    if @reserve.valid? && @reserve.save
       redirect_to reservations_path, notice: "Reserva criada com sucesso!"
     else
-      render :new
+      render :new, { errors: @reserve.errors }
     end
   end
   

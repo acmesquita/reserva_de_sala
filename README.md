@@ -12,3 +12,9 @@ Sistema de gerenciamento de reservas de uma sala de reuniões
   rails db:prepare
   rails server
 ```
+### Rodar os teste
+
+```
+RAILS_ENV="test" rails db:prepare
+rails test
+```
